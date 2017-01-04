@@ -49,7 +49,7 @@ starter-kit-angular/
  │   │   ├──_include.less          * include all base Less files, you can include this file in all your Less files
  │   │   ├──color.less             * color configurations
  │   │   ├──tools.less             * base mixins
- │   │   └──variables.ts           * other configurations
+ │   │   └──variables.less         * other configurations
  │   │
  │   └──_webpack/                  * webpack configuration
  │       ├──_base.js
