@@ -1,0 +1,70 @@
+@import './_core-less/_include.less';
+
+:active{
+	transition-duration: (@base-transition-duration / 5);
+}
+
+// :focus:not(:active){
+// 	transition-delay: @base-transition-duration;
+// }
+
+:first-child{
+    margin-top: 0;
+}
+:last-child{
+    margin-bottom: 0;
+}
+
+[disabled],
+.disabled,
+.disable,
+.state-disabled,
+.state-disable,
+[state="disabled"],
+[state="disable"],
+.is-disabled,
+.is-disable{
+    cursor:     	default;
+	pointer-events: none;
+    opacity:    	.5;
+}
+
+.through,
+.click-through{
+	pointer-events: none;
+}
+
+.no-animation{
+	animation-name: none !important;
+}
+
+
+
+
+
+
+button,
+input,
+optgroup,
+option,
+select,
+textarea{
+    font-family:    inherit;
+}
+
+a{
+	text-decoration: none;
+}
+
+h2, h3, h4, h5, h6{
+	color: 			@base-color-main;
+}
+
+
+
+
+
+
+#app.ready{
+    display:    block;
+}

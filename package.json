@@ -1,0 +1,38 @@
+{
+  "name": "starter-kit-angular",
+  "version": "1.0.0",
+  "description": "Starter Kit for Angular v1",
+  "main": "app/index.html",
+  "scripts": {
+    "start": "npm run dist && npm run dev",
+    "dev": "webpack-dev-server -d --inline --watch-poll --host 0.0.0.0 --env.env=dev",
+    "dist": "webpack -p --env.env=dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Hu Xin (Diablohu)",
+    "email": "huxin@cmcm.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.6.1",
+    "angular-sanitize": "1.6.1",
+    "normalize.css": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-angular": "^6.0.15",
+    
+    "webpack": "^2.2.0-rc.3",
+    "webpack-dev-server": "^2.2.0-rc.0",
+
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "json-loader": "^0.5.4",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "ng-annotate-loader": "0.1.1"
+  }
+}

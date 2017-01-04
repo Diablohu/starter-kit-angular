@@ -1,0 +1,44 @@
+@import './_core-less/_include.less';
+@import (css) "~normalize.css/normalize.css";
+
+*, *:before, *:after{
+	box-sizing: inherit;
+	transition: @base-transition-timing-function @base-transition-duration;
+	transition-property: 	background-color,
+							background-size,
+							background-position,
+							border,
+							box-shadow,
+							color,
+							opacity,
+							outline,
+							transform;
+}
+
+html, body{
+	height:     100%;
+}
+
+html{
+	font-family: 	@font-family-sans;
+	background: 	@base-background-color;
+	color: 			@base-color;
+	font-size: 		@base-font-size;
+	line-height: 	@base-line-height;
+	box-sizing:  	border-box;
+	// user-select: 	none;
+    // cursor:         default;
+}
+
+body{
+    position:       relative;
+}
+
+
+
+
+
+
+#app{
+    display:    none;
+}
