@@ -3,6 +3,8 @@ Starter Kit for Angular v1.
 
 ## Usage:
 
+**Just use this kit as base code to start your Angular project**
+
 * Entry page: /app/index.html
 * All source files will be bundled into /app/dist/
 * Use Webpack 2 to bundle files
@@ -63,7 +65,7 @@ starter-kit-angular/
 You will noticed that there're `_services` and `test` folder under `src`. These are used for my strategy for bundling services and controllers.
 
 1. Services and Controllers names are defined in `src/main.js` in array `services` and `controllers`.
-2. The process will find `src/_services/${serviceName}.js` for the service by that name and `src/${controllerName}/controller.js` for the controller by that name.
+2. The process will find `src/_services/${serviceName}.js` for the service by that name and `src/${controllerName}/controller.js` for the controller by that name and then bundle them.
 
 ___
 

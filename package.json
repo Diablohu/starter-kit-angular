@@ -1,8 +1,18 @@
 {
   "name": "starter-kit-angular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Starter Kit for Angular v1",
   "main": "app/index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Diablohu/starter-kit-angular"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Diablohu/starter-kit-angular"
+    }
+  ],
   "scripts": {
     "start": "npm run dist && npm run dev",
     "dev": "webpack-dev-server -d --inline --watch-poll --host 0.0.0.0 --env.env=dev",
