@@ -1,16 +1,30 @@
 "use strict"
 
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const srcPath = path.resolve(process.cwd(), 'src')
+
 const defaults = {
-    distPath: path.resolve(process.cwd(), 'app/dist/'),
-    publicPath: '/app/dist/',
+    distPath: path.resolve(process.cwd(), 'app/'),
+    publicPath: '',
     target: 'web',
     browserList: [],
-    plugins: []
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(srcPath, 'index.html'),
+            filename: 'index.html',
+            inject: false,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        })
+    ]
 }
 
 module.exports = (options = {}) => {
-    const srcPath = path.resolve(process.cwd(), 'src')
+    let settings = Object.assign({}, defaults, options)
     return {
         entry: {
             critical: [
@@ -21,12 +35,12 @@ module.exports = (options = {}) => {
             ]
         },
         output: {
-            path: options.distPath || defaults.distPath,
-            publicPath: options.publicPath || defaults.publicPath,
-            filename: '[name].js',
-            chunkFilename: '[id].chunk.js'
+            path: settings.distPath,
+            publicPath: settings.publicPath,
+            filename: 'js/[name].js',
+            chunkFilename: 'js/chunks/[id].js'
         },
-        target: options.target || defaults.target,
+        target: settings.target,
         module: {
             rules: [
                 {
@@ -34,7 +48,7 @@ module.exports = (options = {}) => {
                     exclude: /node_modules/,
                     loader: 'file-loader',
                     options: {
-                        name: 'files/[hash].[ext]'
+                        name: 'commons/[hash].[ext]'
                     }
                 },
                 {
@@ -51,7 +65,7 @@ module.exports = (options = {}) => {
                                     [
                                         'env', {
                                             targets: {
-                                                browsers: options.browserList || defaults.browserList
+                                                browsers: settings.browserList
                                             },
                                             modules: false
                                         }
@@ -73,7 +87,7 @@ module.exports = (options = {}) => {
                             options: {
                                 camelCase: true,
                                 autoprefixer: {
-                                    'browsers': options.browserList || defaults.browserList,
+                                    'browsers': settings.browserList,
                                     add: true
                                 }
                             }
@@ -91,7 +105,7 @@ module.exports = (options = {}) => {
                             options: {
                                 camelCase: true,
                                 autoprefixer: {
-                                    'browsers': options.browserList || defaults.browserList,
+                                    'browsers': settings.browserList,
                                     add: true
                                 }
                             }
@@ -104,6 +118,6 @@ module.exports = (options = {}) => {
             ],
             noParse: /\.min\./
         },
-        plugins: options.plugins || defaults.plugins
+        plugins: settings.plugins
     }
 }

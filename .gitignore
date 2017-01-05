@@ -20,7 +20,7 @@ $RECYCLE.BIN/
 # Others
 /node_modules
 /bower_components
-/app/dist
+/app/*
 
 # =========================
 # Operating System Files

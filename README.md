@@ -5,8 +5,8 @@ Starter Kit for Angular v1.
 
 **Just use this kit as base code to start your Angular project**
 
-* Entry page: /app/index.html
-* All source files will be bundled into /app/dist/
+* Entry page source: /src/index.html
+* All source files will be bundled into /app/
 * Use Webpack 2 to bundle files
 * Use LESS for CSS pre-process, but you can choose on your own such as SASS.
 
@@ -34,11 +34,11 @@ ___
 
 ```
 starter-kit-angular/
- ├──app/
- |   ├──dist/                      * all bundles
- |   └──index.html                 * entry page
+ ├──app/                           * all bundles
  │
  ├──src/                           * source files that will be all bundled to /app/dist/
+ |   ├──index.html                 * app entry page source file
+ │   │
  |   ├──critical.js                * critical process, such as page loading styles
  |   ├──critical.less              * critical styles
  │   │

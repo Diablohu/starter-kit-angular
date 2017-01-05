@@ -12,8 +12,7 @@ const browserList = [
 ]
 
 let config = require('./_base.js')({
-    browserList: browserList,
-    plugins: []
+    browserList: browserList
 })
 
 module.exports = config

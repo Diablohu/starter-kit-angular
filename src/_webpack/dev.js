@@ -36,7 +36,7 @@ let config = require('./_base.js')({
 config.devServer = {
     // contentBase: path.join(__dirname, "app"),
     contentBase: 'app',
-    publicPath: '/dist/'
+    publicPath: ''
 }
 // config.plugins = [
 //     new webpack.HotModuleReplacementPlugin()
