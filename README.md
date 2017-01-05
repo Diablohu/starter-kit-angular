@@ -51,10 +51,18 @@ starter-kit-angular/
  │   │   ├──tools.less             * base mixins
  │   │   └──variables.less         * other configurations
  │   │
- │   └──_webpack/                  * webpack configuration
- │       ├──_base.js
- │       ├──dev.js                 * will use this config for development environment
- │       └──dist.js                * will use this config for production environment
+ │   ├──_webpack/                  * webpack configuration
+ │   │   ├──_base.js
+ │   │   ├──dev.js                 * will use this config for development environment
+ │   │   └──dist.js                * will use this config for production environment
+ │   │
+ │   ├──controllers/
+ │   │   ├──${controller}.js
+ │   │   └──${controller}.less
+ │   │
+ │   └──services/
+ │       ├──${service}.js
+ │       └──${service}.less
  │
  └──webpack.config.js              * webpack main configuration file
 
@@ -62,10 +70,10 @@ starter-kit-angular/
 
 ## Services and Controllers
 
-You will noticed that there're `_services` and `test` folder under `src`. These are used for my strategy for bundling services and controllers.
+You will noticed that there're `services` and `controllers` folder under `src`. These are used for my strategy for bundling services and controllers.
 
 1. Services and Controllers names are defined in `src/main.js` in array `services` and `controllers`.
-2. The process will find `src/_services/${serviceName}.js` for the service by that name and `src/${controllerName}/controller.js` for the controller by that name and then bundle them.
+2. The process will find `src/services/${serviceName}` for the service by that name and `src/controllers/${controllerName}` for the controller by that name and then bundle them.
 
 ___
 

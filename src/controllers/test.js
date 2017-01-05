@@ -1,4 +1,4 @@
-import styles from './styles.less'
+import styles from './test.less'
 
 export default (app) => {
     app.controller('test', ($scope, $rootScope) => {

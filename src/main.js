@@ -15,6 +15,14 @@ const controllers = [
     'test'
 ]
 
+const getModule = (filePath) => {
+    let module = require(filePath)
+    if( typeof module === 'function' )
+        return module(app)
+    if( module.default )
+        return module.default(app)
+}
+
 app.controller('root', ($scope, $rootScope, $timeout) => {
     $rootScope.ready = false
     $rootScope.timeStart = new Date()
@@ -24,13 +32,8 @@ app.controller('root', ($scope, $rootScope, $timeout) => {
     }, 1000)
 })
 
-services.forEach(service => {
-    require(`./${service}/controller`).default(app)
-})
-
-controllers.forEach(controller => {
-    require(`./${controller}/controller`).default(app)
-})
+services.forEach(service => getModule(`./services/${service}`))
+controllers.forEach(controller => getModule(`./controllers/${controller}`))
 
 // replaces ng-app="appName"
 angular.element(document).ready(function () {
