@@ -21,6 +21,7 @@ $RECYCLE.BIN/
 /node_modules
 /bower_components
 /app/*
+/npm-debug.log
 
 # =========================
 # Operating System Files
