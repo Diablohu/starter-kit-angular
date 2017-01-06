@@ -42,16 +42,16 @@
 
     <div id="app" ng-if="ready" ng-class="{ready: ready}">
 
-        <div ng-controller="test">
-            <h2>Hello Angular!</h2>
-            <p>Bootstrap time: {{ elapsed }}ms (after 1000ms timeout)</p>
-            <hr/>
-            <p><button ng-click="imgSwitch()">Switch Picture</button></p>
-            <figure>
-                <img src="{{ imgSrc }}" />
-                <figcaption>img src: {{ imgSrc }}</figcaption>
-            </figure>
+        <h2>Hello Angular!</h2>
+        <p>Bootstrap time: {{ elapsed }}ms (after 1000ms timeout)</p>
+        
+        <div ng-controller="route-switch">
+            <a href="{{ router.path }}" ng-repeat="router in routers" ng-click="routeChange(router.name, $event)" ng-class="{on : router.name == cur}">{{ router.title }}</a>
         </div>
+        
+        <main>
+            <div ng-view class="angular-animate" ng-class="ngViewClass"></div>
+        </main>
 
     </div>
 

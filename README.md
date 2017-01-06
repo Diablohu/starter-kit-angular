@@ -45,6 +45,9 @@ starter-kit-angular/
  |   ├──main.js
  |   ├──main.less
  │   │
+ │   ├──_core/                     * core Javascript files
+ │   │   └──routers.less           * Angular router configurations
+ │   │
  │   ├──_core-less/                * core Less files
  │   │   ├──_include.less          * include all base Less files, you can include this file in all your Less files
  │   │   ├──color.less             * color configurations
@@ -56,13 +59,17 @@ starter-kit-angular/
  │   │   ├──dev.js                 * will use this config for development environment
  │   │   └──dist.js                * will use this config for production environment
  │   │
+ │   ├──templates/                 * templates used for router
+ │   │   └──${template}.js
+ │   │
  │   ├──controllers/
- │   │   ├──${controller}.js
- │   │   └──${controller}.less
+ │   │   └──${controller}.js
+ │   │
+ │   ├──components/
+ │   │   └──${component}.js
  │   │
  │   └──services/
- │       ├──${service}.js
- │       └──${service}.less
+ │       └──${service}.js
  │
  └──webpack.config.js              * webpack main configuration file
 
@@ -70,10 +77,10 @@ starter-kit-angular/
 
 ## Services and Controllers
 
-You will noticed that there're `services` and `controllers` folder under `src`. These are used for my strategy for bundling services and controllers.
+You will noticed that there're `services`, `controllers` and `components` folder under `src`. These are used for my strategy for bundling services, controllers and components.
 
 1. Services and Controllers names are defined in `src/main.js` in array `services` and `controllers`.
-2. The process will find `src/services/${serviceName}` for the service by that name and `src/controllers/${controllerName}` for the controller by that name and then bundle them.
+2. The process will find `src/services/${serviceName}` for the service by that name, `src/controllers/${controllerName}` for the controller by that name and `src/components/${componentName}` for the component by that name and then bundle them.
 
 ___
 

@@ -52,6 +52,16 @@ module.exports = (options = {}) => {
                     }
                 },
                 {
+                    test: /\.(html)$/,
+                    include: [
+                        path.resolve(srcPath, "components"),
+                        path.resolve(srcPath, "templates")
+                    ],
+                    loader: 'html-loader',
+                    options: {
+                    }
+                },
+                {
                     test: /\.js?$|\.jsx$/,
                     exclude: /node_modules/,
                     use: [

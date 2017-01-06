@@ -60,6 +60,10 @@ h2, h3, h4, h5, h6{
 	color: 			@base-color-main;
 }
 
+main{
+    position:   relative;
+}
+
 
 
 
@@ -67,4 +71,27 @@ h2, h3, h4, h5, h6{
 
 #app.ready{
     display:    block;
+}
+
+
+
+
+[ng-view].ng-animate{
+    width:  100%;
+    // transition-duration: 10s;
+
+    &.ng-enter{
+        opacity:    0;
+    }
+    &.ng-enter-active{
+        opacity:    1;
+    }
+    &.ng-leave{
+        position:   absolute;
+        opacity:    1;
+        top:        0;
+    }
+    &.ng-leave-active{
+        opacity:    0;
+    }
 }
